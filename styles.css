@@ -233,3 +233,8 @@ footer {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
+
+.text-muted {
+    font-size: 0.95rem; /* Ukuran font yang pas untuk dibaca pelan-pelan */
+    margin-bottom: 15px;
+}
