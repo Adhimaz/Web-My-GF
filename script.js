@@ -38,23 +38,33 @@ const countdown = setInterval(function() {
 function nextPage() {
     const now = new Date().getTime();
     
-    // Cek apakah waktu sekarang sudah melewati atau sama dengan targetDate (17 May 2026)
+    // Cek apakah sudah sampai tanggal target
     if (now < targetDate) {
-        // Jika belum sampai waktunya, munculkan pesan peringatan
-        alert("Sabar ya sayang... ✨ Pesan spesial ini baru bisa dibuka pada tanggal 17 Mei. Ditunggu ya! ❤️");
+        // GANTI alert(...) LAMA DENGAN INI:
+        Swal.fire({
+            title: 'Sabar ya sayang... ✨',
+            text: 'Pesan spesial ini baru bisa dibuka pada tanggal 17 Mei. Ditunggu ya! ❤️',
+            icon: 'info',
+            confirmButtonText: 'Siap! 🥰',
+            confirmButtonColor: '#185fc9', // Sesuaikan dengan tema warnamu
+            background: '#fff0f3', // Warna background notifikasi yang soft
+            showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+            }
+        });
     } else {
-        // Jika sudah sampai waktunya, jalankan fungsi pindah halaman seperti biasa
+        // ... (sisanya tetap sama seperti sebelumnya)
+        playMusic();
         const p1 = document.getElementById('page1');
         const p2 = document.getElementById('page2');
-
         p1.classList.add('fade-out');
-
         setTimeout(() => {
             p1.classList.add('d-none');
             p2.classList.remove('d-none');
             window.scrollTo(0, 0);
-            
-            // Berikan efek konfeti kejutan
             celebrate();
         }, 500);
     }
