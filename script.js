@@ -47,7 +47,7 @@ function nextPage() {
             icon: 'info',
             confirmButtonText: 'Siap! 🥰',
             confirmButtonColor: '#185fc9', // Sesuaikan dengan tema warnamu
-            background: '#fff0f3', // Warna background notifikasi yang soft
+            background: '#f0f6ff', // Warna background notifikasi yang soft
             showClass: {
                 popup: 'animate__animated animate__fadeInDown'
             },
