@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday! ✨</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- HALAMAN 1: HERO & TIMER -->
+    <section id="page1">
+        <div class="hero">
+            <div class="container px-4">
+                <h1 class="animate__animated animate__zoomIn" style="color: 'white'; font-family: 'Dancing Script';">
+                    <strong>Happy Birthday!</strong> 🎂
+                </h1>
+                <h1 class="animate__animated animate__zoomIn" style="color: 'white'; font-family: 'Dancing Script';">
+                    Sayangku Cinta ❤️</h1>
+                <p class="fs-6 animate__animated animate__fadeInUp animate__delay-1s">Semoga harimu penuh cinta & tawa.
+                </p>
+            </div>
+        </div>
+
+        <div class="container px-4">
+            <div class="countdown-box animate__animated animate__fadeInUp">
+                <div class="row g-0 text-center">
+                    <div class="col-3">
+                        <h3 id="days">00</h3> <small>Hari</small>
+                    </div>
+                    <div class="col-3">
+                        <h3 id="hours">00</h3> <small>Jam</small>
+                    </div>
+                    <div class="col-3">
+                        <h3 id="minutes">00</h3> <small>Menit</small>
+                    </div>
+                    <div class="col-3">
+                        <h3 id="seconds">00</h3> <small>Detik</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tombol Selanjutnya -->
+            <div class="text-center mt-5">
+                <button class="btn-next animate__animated animate__bounceIn animate__delay-2s" onclick="nextPage()">
+                    Buka Pesan Spesial ✨
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- HALAMAN 2: PESAN DETAIL (Sembunyi dulu) -->
+    <section id="page2" class="d-none">
+        <div class="container py-5 px-4">
+            <div class="card-message animate__animated animate__fadeIn">
+                <!-- Judul Pesan -->
+                <h2 class="fw-bold mb-4"
+                    style="color: var(--dark-blue); font-family: 'Dancing Script'; font-size: 3rem;">Untukmu... 💌</h2>
+
+                <!-- Carousel ala Instagram (Slide Foto) -->
+                <div id="photoCarousel" class="carousel slide mb-4" data-bs-ride="false">
+                    <!-- Indikator Titik (Opsional, mirip IG) -->
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="0"
+                            class="active"></button>
+                        <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="2"></button>
+                        <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="3"></button>
+                        <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="4"></button>
+                        <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="5"></button>
+                    </div>
+
+                    <div class="carousel-inner rounded-4 shadow">
+                        <!-- Foto 1 (Utama/Kue) -->
+                        <div class="carousel-item active">
+                            <img src="images/04.jpeg" class="d-block w-100 ig-post" alt="Special Photo 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/05.jpeg" class="d-block w-100 ig-post" alt="Special Photo 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/06.jpeg" class="d-block w-100 ig-post" alt="Special Photo 3">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/07.jpeg" class="d-block w-100 ig-post" alt="Special Photo 4">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/08.jpeg" class="d-block w-100 ig-post" alt="Special Photo 5">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/09.jpeg" class="d-block w-100 ig-post" alt="Special Photo 6">
+                        </div>
+                    </div>
+
+                    <!-- Navigasi Panah -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#photoCarousel"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#photoCarousel"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </button>
+                </div>
+
+                <!-- Pesan Teks -->
+                <p class="text-muted">Melihat foto-foto ini mengingatkanku betapa beruntungnya aku memilikimu. Di hari
+                    spesialmu ini, aku nggak cuma merayakan bertambahnya usiamu, tapi aku merayakan setiap tawa, setiap
+                    cerita, dan setiap dukungan yang kamu kasih buat aku. Terima kasih sudah menjadi rumah ternyaman
+                    buat hatiku. Semoga dunia selalu baik sama kamu, sepadan dengan kebaikan hati yang selalu kamu
+                    pancarkan.
+                </p>
+
+                <p class="text-muted">
+                    Untuk seseorang yang kehadirannya mengubah duniaku menjadi lebih indah: Selamat
+                    ulang tahun. Terima kasih sudah menjadi alasan di balik senyumku setiap hari. Di hari ini, aku
+                    berharap semua kebahagiaan yang kamu tabur di hati orang lain kembali padamu berlipat ganda. Kamu
+                    adalah kado terindah dalam hidupku, dan aku akan selalu menjaga kado itu dengan sepenuh hatiku. Aku
+                    sayang kamu, hari ini, esok, dan selamanya.
+                    <strong>I
+                        love you more than words can ever express.</strong> ❤️
+                </p>
+
+                <!-- Bagian Memori / Pesan -->
+                <div class="memory-section mt-5 text-start">
+                    <h5 class="fw-bold mb-3" style="color: var(--dark-blue);">Tulis Harapanmu ✨</h5>
+
+                    <!-- Form Input -->
+                    <div class="input-group mb-3">
+                        <input type="text" id="messageInput" class="form-control rounded-pill-start"
+                            placeholder="Tulis sesuatu...">
+                        <button class="btn btn-primary rounded-pill-end" onclick="saveMessage()">Kirim</button>
+                    </div>
+
+                    <!-- Tempat Pesan Muncul -->
+                    <div id="memoryWall" class="mt-3">
+                        <!-- Pesan akan nempel di sini -->
+                    </div>
+                </div>
+
+                <!-- Tombol Kembali tetap di bawahnya -->
+                <div class="text-center mt-4 border-top pt-3">
+                    <button class="btn btn-outline-secondary btn-sm rounded-pill" onclick="prevPage()">Kembali</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="balloon" style="--left: 10%; background: #4dafff; animation-delay: 0s;"></div>
+    <div class="balloon" style="--left: 75%; background: #185fc9; animation-delay: 3s;"></div>
+
+    <!-- Elemen Audio -->
+    <audio id="birthdaySong" loop>
+        <source src="song.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Tombol Kontrol Musik (Melayang) -->
+    <button id="musicControl" class="btn-music" onclick="toggleMusic()">
+        <span id="musicIcon">🎵</span>
+    </button>
+
+    <footer class="text-center py-4 mt-auto">
+        <p class="m-0 small">Made with ❤️ for You</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

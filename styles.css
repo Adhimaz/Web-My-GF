@@ -1,0 +1,226 @@
+:root {
+    --primary-color: #185fc9;
+    --secondary-color: #4dafff;
+    --dark-blue: #103469;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f6ff;
+    overflow-x: hidden;
+    max-width: 480px; 
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Bagian Atas */
+.hero {
+    height: 70vh;
+    display: flex;
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
+                url('images/01.jpeg') center/cover;
+    align-items: flex-end; 
+    padding-bottom: 40px;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    z-index: 1;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Countdown */
+.countdown-box {
+    background: white;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    color: var(--dark-blue);
+    margin-top: -35px;
+    z-index: 10;
+    position: relative;
+}
+
+/* Tombol Selanjutnya */
+.btn-next {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(77, 175, 255, 0.4);
+    transition: 0.3s;
+}
+
+.btn-next:hover {
+    transform: translateY(-3px) scale(1.05);
+    background-color: var(--dark-blue);
+}
+
+/* Card Page 2 */
+.card-message {
+    background: white;
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* Animasi Balon */
+.balloon {
+    position: fixed;
+    bottom: -100px;
+    width: 35px;
+    height: 50px;
+    border-radius: 50%;
+    z-index: -1;
+    animation: fly 8s infinite linear;
+    opacity: 0.4;
+}
+
+@keyframes fly {
+    0% { transform: translateY(0) rotate(0deg); left: var(--left); }
+    100% { transform: translateY(-120vh) rotate(20deg); left: var(--left); }
+}
+
+/* Transisi Fade Out */
+.fade-out {
+    animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeOut {
+    to { opacity: 0; transform: scale(0.95); }
+}
+
+footer {
+    color: var(--dark-blue);
+}
+
+/* Container Carousel biar kotak */
+.carousel-inner {
+    aspect-ratio: 1 / 1;
+    background-color: #f8f9fa;
+}
+
+/* Foto di dalam carousel */
+.ig-post {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Piring dan tulisan tetap utuh */
+}
+
+/* Custom Indikator ala IG */
+.carousel-indicators [button] {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin: 0 4px;
+    background-color: var(--secondary-color);
+}
+
+.carousel-indicators .active {
+    background-color: var(--primary-color);
+}
+
+/* Sembunyikan panah kalau mau benar-benar mirip swipe IG di HP */
+.carousel-control-prev, .carousel-control-next {
+    width: 10%;
+    opacity: 0.3;
+}
+
+.rounded-pill-start {
+    border-top-left-radius: 50px !important;
+    border-bottom-left-radius: 50px !important;
+    border-right: none;
+}
+
+.rounded-pill-end {
+    border-top-right-radius: 50px !important;
+    border-bottom-right-radius: 50px !important;
+    background-color: var(--primary-color) !important;
+    border: none;
+}
+
+.memory-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff0f3;
+    border-left: 4px solid var(--primary-color);
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    animation: fadeInDown 0.5s;
+}
+
+.btn-delete {
+    background: none;
+    border: none;
+    color: #103469;
+    cursor: pointer;
+    font-size: 0.8rem;
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+.btn-delete:hover {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.btn-music {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 9999;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+.btn-music:hover {
+    transform: scale(1.1);
+}
+
+/* Animasi berputar saat musik nyala */
+.rotating {
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
