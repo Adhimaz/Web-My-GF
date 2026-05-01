@@ -36,47 +36,19 @@ const countdown = setInterval(function() {
 // 3. NAVIGASI HALAMAN & PROTEKSI
 // ==========================================
 function nextPage() {
-    const now = new Date().getTime();
-    
-    // Cek apakah sudah sampai tanggal target
-    if (now < targetDate) {
-        // GANTI alert(...) LAMA DENGAN INI:
-        Swal.fire({
-            title: 'Sabar ya sayang... ✨',
-            text: 'Pesan spesial ini baru bisa dibuka pada tanggal 17 Mei. Ditunggu ya! ❤️',
-            icon: 'info',
-            confirmButtonText: 'Siap! 🥰',
-            confirmButtonColor: '#185fc9', // Sesuaikan dengan tema warnamu
-            background: '#fff0f3', // Warna background notifikasi yang soft
-            showClass: {
-                popup: 'animate__animated animate__fadeInDown'
-            },
-            hideClass: {
-                popup: 'animate__animated animate__fadeOutUp'
-            }
-        });
-    } else {
-        // ... (sisanya tetap sama seperti sebelumnya)
-        playMusic();
-        const p1 = document.getElementById('page1');
-        const p2 = document.getElementById('page2');
-        p1.classList.add('fade-out');
-        setTimeout(() => {
-            p1.classList.add('d-none');
-            p2.classList.remove('d-none');
-            window.scrollTo(0, 0);
-            celebrate();
-        }, 500);
-    }
-}
-
-function prevPage() {
     const p1 = document.getElementById('page1');
     const p2 = document.getElementById('page2');
 
-    p2.classList.add('d-none');
-    p1.classList.remove('d-none');
-    p1.classList.remove('fade-out');
+    p1.classList.add('fade-out');
+
+    setTimeout(() => {
+        p1.classList.add('d-none');
+        p2.classList.remove('d-none');
+        window.scrollTo(0, 0);
+        
+        // Langsung kasih kejutan konfeti pas buka page 2
+        celebrate();
+    }, 500);
 }
 
 // ==========================================
