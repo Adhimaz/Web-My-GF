@@ -36,28 +36,19 @@ const countdown = setInterval(function() {
 // 3. NAVIGASI HALAMAN & PROTEKSI
 // ==========================================
 function nextPage() {
-    const now = new Date().getTime();
-    
-    // Cek apakah waktu sekarang sudah melewati atau sama dengan targetDate (17 May 2026)
-    if (now < targetDate) {
-        // Jika belum sampai waktunya, munculkan pesan peringatan
-        alert("Sabar ya sayang... ✨ Pesan spesial ini baru bisa dibuka pada tanggal 17 Mei. Ditunggu ya! ❤️");
-    } else {
-        // Jika sudah sampai waktunya, jalankan fungsi pindah halaman seperti biasa
-        const p1 = document.getElementById('page1');
-        const p2 = document.getElementById('page2');
+    const p1 = document.getElementById('page1');
+    const p2 = document.getElementById('page2');
 
-        p1.classList.add('fade-out');
+    p1.classList.add('fade-out');
 
-        setTimeout(() => {
-            p1.classList.add('d-none');
-            p2.classList.remove('d-none');
-            window.scrollTo(0, 0);
-            
-            // Berikan efek konfeti kejutan
-            celebrate();
-        }, 500);
-    }
+    setTimeout(() => {
+        p1.classList.add('d-none');
+        p2.classList.remove('d-none');
+        window.scrollTo(0, 0);
+        
+        // Langsung kasih kejutan konfeti pas buka page 2
+        celebrate();
+    }, 500);
 }
 
 function prevPage() {
