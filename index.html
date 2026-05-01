@@ -64,9 +64,10 @@
                 <h2 class="fw-bold mb-4"
                     style="color: var(--dark-blue); font-family: 'Dancing Script'; font-size: 3rem;">Untukmu... 💌</h2>
 
-                <!-- Carousel ala Instagram (Slide Foto) -->
-                <div id="photoCarousel" class="carousel slide mb-4" data-bs-ride="false">
-                    <!-- Indikator Titik (Opsional, mirip IG) -->
+                <!-- Carousel Otomatis (Slide Foto) -->
+                <!-- data-bs-ride="carousel" membuat foto ganti sendiri -->
+                <div id="photoCarousel" class="carousel slide mb-4 carousel-fade" data-bs-ride="carousel">
+                    <!-- Indikator Titik -->
                     <div class="carousel-indicators">
                         <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="0"
                             class="active"></button>
@@ -78,28 +79,28 @@
                     </div>
 
                     <div class="carousel-inner rounded-4 shadow">
-                        <!-- Foto 1 (Utama/Kue) -->
-                        <div class="carousel-item active">
+                        <!-- Setiap item diberi data-bs-interval="3000" (3 detik) -->
+                        <div class="carousel-item active" data-bs-interval="3000">
                             <img src="images/04.jpeg" class="d-block w-100 ig-post" alt="Special Photo 1">
                         </div>
-                        <div class="carousel-item">
+                        <div class="carousel-item" data-bs-interval="3000">
                             <img src="images/05.jpeg" class="d-block w-100 ig-post" alt="Special Photo 2">
                         </div>
-                        <div class="carousel-item">
+                        <div class="carousel-item" data-bs-interval="3000">
                             <img src="images/06.jpeg" class="d-block w-100 ig-post" alt="Special Photo 3">
                         </div>
-                        <div class="carousel-item">
+                        <div class="carousel-item" data-bs-interval="3000">
                             <img src="images/07.jpeg" class="d-block w-100 ig-post" alt="Special Photo 4">
                         </div>
-                        <div class="carousel-item">
+                        <div class="carousel-item" data-bs-interval="3000">
                             <img src="images/08.jpeg" class="d-block w-100 ig-post" alt="Special Photo 5">
                         </div>
-                        <div class="carousel-item">
+                        <div class="carousel-item" data-bs-interval="3000">
                             <img src="images/09.jpeg" class="d-block w-100 ig-post" alt="Special Photo 6">
                         </div>
                     </div>
 
-                    <!-- Navigasi Panah -->
+                    <!-- Navigasi Panah (Tetap ada untuk manual) -->
                     <button class="carousel-control-prev" type="button" data-bs-target="#photoCarousel"
                         data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -110,44 +111,51 @@
                     </button>
                 </div>
 
-                <!-- Pesan Teks -->
-                <p class="text-muted">Melihat foto-foto ini mengingatkanku betapa beruntungnya aku memilikimu. Di hari
-                    spesialmu ini, aku nggak cuma merayakan bertambahnya usiamu, tapi aku merayakan setiap tawa, setiap
-                    cerita, dan setiap dukungan yang kamu kasih buat aku. Terima kasih sudah menjadi rumah ternyaman
-                    buat hatiku. Semoga dunia selalu baik sama kamu, sepadan dengan kebaikan hati yang selalu kamu
-                    pancarkan.
-                </p>
-
-                <p class="text-muted">
-                    Untuk seseorang yang kehadirannya mengubah duniaku menjadi lebih indah: Selamat
-                    ulang tahun. Terima kasih sudah menjadi alasan di balik senyumku setiap hari. Di hari ini, aku
-                    berharap semua kebahagiaan yang kamu tabur di hati orang lain kembali padamu berlipat ganda. Kamu
-                    adalah kado terindah dalam hidupku, dan aku akan selalu menjaga kado itu dengan sepenuh hatiku. Aku
-                    sayang kamu, hari ini, esok, dan selamanya.
-                    <strong>I
-                        love you more than words can ever express.</strong> ❤️
-                </p>
+                <!-- Pesan Teks Romantis & Menyentuh -->
+                <div class="text-start mb-4" style="line-height: 1.8;">
+                    <p class="text-muted">
+                        Melihat foto-foto ini mengingatkanku betapa beruntungnya aku memilikimu. Di hari spesialmu ini,
+                        aku nggak cuma merayakan bertambahnya usiamu, tapi aku merayakan setiap tawa, setiap cerita, dan
+                        setiap dukungan yang kamu kasih buat aku.
+                    </p>
+                    <p class="text-muted">
+                        Terima kasih sudah menjadi rumah ternyaman buat hatiku. Semoga dunia selalu baik sama kamu,
+                        sepadan dengan kebaikan hati yang selalu kamu pancarkan. Kamu adalah jawaban dari doa-doa yang
+                        bahkan belum sempat aku ucapkan.
+                    </p>
+                    <p class="text-muted">
+                        Selamat ulang tahun, Sayang. Terima kasih sudah menjadi alasan di balik senyumku setiap hari.
+                        Aku berharap semua kebahagiaan yang kamu tabur di hati orang lain kembali padamu berlipat ganda.
+                        Kamu adalah kado terindah dalam hidupku, dan aku akan selalu menjaga kado itu dengan sepenuh
+                        hatiku.
+                    </p>
+                    <h5 class="fw-bold" style="color: var(--primary-color);">
+                        I love you more than words can ever express. ❤️
+                    </h5>
+                </div>
 
                 <!-- Bagian Memori / Pesan -->
                 <div class="memory-section mt-5 text-start">
                     <h5 class="fw-bold mb-3" style="color: var(--dark-blue);">Tulis Harapanmu ✨</h5>
 
                     <!-- Form Input -->
-                    <div class="input-group mb-3">
-                        <input type="text" id="messageInput" class="form-control rounded-pill-start"
-                            placeholder="Tulis sesuatu...">
-                        <button class="btn btn-primary rounded-pill-end" onclick="saveMessage()">Kirim</button>
+                    <div class="input-group mb-3 shadow-sm">
+                        <input type="text" id="messageInput" class="form-control border-0"
+                            placeholder="Tulis sesuatu untuk hari ini..." style="padding: 12px 20px;">
+                        <button class="btn btn-primary px-4" onclick="saveMessage()">Kirim</button>
                     </div>
 
-                    <!-- Tempat Pesan Muncul -->
+                    <!-- Tempat Pesan Muncul (Sesuai JS terakhir dengan tombol hapus) -->
                     <div id="memoryWall" class="mt-3">
-                        <!-- Pesan akan nempel di sini -->
+                        <!-- Pesan akan nempel di sini melalui script.js -->
                     </div>
                 </div>
 
-                <!-- Tombol Kembali tetap di bawahnya -->
-                <div class="text-center mt-4 border-top pt-3">
-                    <button class="btn btn-outline-secondary btn-sm rounded-pill" onclick="prevPage()">Kembali</button>
+                <!-- Tombol Kembali -->
+                <div class="text-center mt-5 border-top pt-4">
+                    <button class="btn btn-outline-secondary btn-sm rounded-pill px-4" onclick="prevPage()">
+                        <i class="bi bi-arrow-left"></i> Kembali ke Depan
+                    </button>
                 </div>
             </div>
         </div>

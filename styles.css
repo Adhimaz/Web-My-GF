@@ -145,6 +145,15 @@ footer {
     opacity: 0.3;
 }
 
+.carousel-fade .carousel-item {
+    transition-property: opacity;
+}
+
+.carousel-item {
+    border-radius: 15px; /* Biar ujung fotonya tetep melengkung cantik */
+    overflow: hidden;
+}
+
 .rounded-pill-start {
     border-top-left-radius: 50px !important;
     border-bottom-left-radius: 50px !important;
