@@ -12,9 +12,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Library untuk efek konfeti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
 
 <body>
+    <div id="overlay" onclick="startEverything()"
+        style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(36, 36, 36, 0.61); z-index: 10000; display: flex; align-items: center; justify-content: center; color: white; cursor: pointer;">
+        <div class="text-center">
+            <h2>Sentuh untuk Memulai ✨</h2>
+        </div>
+    </div>
 
     <!-- HALAMAN 1: HERO & TIMER -->
     <section id="page1">
@@ -77,6 +85,7 @@
                         <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="3"></button>
                         <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="4"></button>
                         <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="5"></button>
+                        <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="6"></button>
                     </div>
 
                     <div class="carousel-inner rounded-4 shadow">
@@ -98,6 +107,9 @@
                         </div>
                         <div class="carousel-item" data-bs-interval="3000">
                             <img src="images/09.jpeg" class="d-block w-100 ig-post" alt="Special Photo 6">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="3000">
+                            <img src="images/10.png" class="d-block w-100 ig-post" alt="Special Photo 7">
                         </div>
                     </div>
 
